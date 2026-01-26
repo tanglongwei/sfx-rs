@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "crates/sfx-stub",
+    "crates/sfx-cli",
+]
+resolver = "2"

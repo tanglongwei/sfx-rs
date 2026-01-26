@@ -1,0 +1,18 @@
+[package]
+name = "sfx-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0"
+clap = { version = "4.4", features = ["derive"] }
+tar = "0.4"
+zstd = "0.13"
+walkdir = "2.4"
+byteorder = "1.5"
+indicatif = "0.17"
+console = "0.15"
+
+[build-dependencies]
+# We might need this if we decide to build the stub in build.rs, 
+# but for now we'll stick to manual ordering or simple include.

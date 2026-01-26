@@ -1,0 +1,16 @@
+[package]
+name = "sfx-stub"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tar = { version = "0.4", default-features = false }
+zstd = { version = "0.13", default-features = false } # panic-on-error is implicit if not handled, but we use safe zstd usually.
+# zstd default features include 'legacy', 'zdict_builder', etc. We only need decoder.
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
