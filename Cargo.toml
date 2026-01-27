@@ -4,3 +4,12 @@ members = [
     "crates/sfx-cli",
 ]
 resolver = "2"
+
+[profile.release]
+strip = true
+lto = true
+panic = "abort"
+
+[profile.release.package.sfx-stub]
+opt-level = "z"
+codegen-units = 1
