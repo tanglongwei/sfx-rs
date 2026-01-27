@@ -146,7 +146,6 @@ fn extract(file: &mut File, info: PayloadInfo, config: Config) -> Result<(), Box
                     if k == "exec" {
                         exec_cmd = Some(v.to_string());
                     } else if k == "dir" {
-                         // Only set default if user didn't specify output
                          if config.target_dir.is_none() {
                              resolved_target_dir = Some(PathBuf::from(v));
                          }
@@ -160,7 +159,6 @@ fn extract(file: &mut File, info: PayloadInfo, config: Config) -> Result<(), Box
 
         if config.verbose {
              if !verbose_printed {
-                // We print this once we know where we are writing
                 println!("Extracting to: {}", target_base.display());
                 verbose_printed = true;
             }

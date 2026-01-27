@@ -8,7 +8,7 @@ use tar::{Builder, Header};
 use walkdir::WalkDir;
 use zstd::stream::write::Encoder;
 
-// Embed the stub binary.
+
 const STUB_BYTES: &[u8] = include_bytes!(concat!(env!("OUT_DIR"), "/sfx-stub.bin"));
 const MAGIC: &[u8; 9] = b"SFX_RS_01";
 const CONFIG_FILENAME: &str = "__sfx_config";
